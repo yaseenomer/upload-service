@@ -3,6 +3,7 @@ import { Router, Request, Response } from "express";
 import "express-async-errors";
 import multer from "multer";
 import path from "path";
+import * as fs from "fs";
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -77,6 +78,18 @@ router.get("/:file", async (req: Request, res: Response) => {
   try {
     const { file } = req.params;
     res.status(200).sendFile(path.join(__dirname, "../uploads", file));
+  } catch (error) {
+    return res.status(500).json(JSON.stringify(error));
+  }
+});
+
+router.delete("/:file", async (req: Request, res: Response) => {
+  try {
+    const { file } = req.params;
+
+    fs.unlinkSync(path.join(__dirname, "../uploads", file));
+
+    res.status(200).json({ message: "delete success" });
   } catch (error) {
     return res.status(500).json(JSON.stringify(error));
   }
