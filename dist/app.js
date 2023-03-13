@@ -21,6 +21,6 @@ app.all("*", () => {
     throw new common_1.NotFoundError();
 });
 app.use(common_1.errorHandlerMiddleware);
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4004;
 exports.port = port;
 //# sourceMappingURL=app.js.map

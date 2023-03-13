@@ -1,0 +1,16 @@
+
+
+http://localhost:4004
+Content-Type: multipart/form-data
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+
+Content-Disposition: form-data; name="image"; filename="1.png"
+Content-Type: image/png
+
+
+
+
+
+
+

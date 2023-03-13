@@ -34,9 +34,11 @@ exports.upload = (0, multer_1.default)({
 });
 const router = (0, express_1.Router)();
 exports.router = router;
-router.post("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        return res.status(200).send("welcome to upload service");
+        return res.status(200).json({
+            message: "welcome to upload service",
+        });
     }
     catch (error) {
         throw new common_1.InternalServerError();

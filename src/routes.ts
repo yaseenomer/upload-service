@@ -25,11 +25,10 @@ export const upload = multer({
 
 const router: Router = Router();
 
-router.post("/", async (req: Request, res: Response) => {
+router.get("/", async (req: Request, res: Response) => {
   try {
     return res.status(200).json({
       message: "welcome to upload service",
-      body: req.body,
     });
   } catch (error) {
     throw new InternalServerError();
