@@ -25,6 +25,6 @@ app.all("*", () => {
 
 app.use(errorHandlerMiddleware);
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4004;
 
 export { app, port };
